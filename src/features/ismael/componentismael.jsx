@@ -1,15 +1,15 @@
 import React from 'react'
 
-export const Componetsebastian = () => {
+export const Componentismael = () => {
   return (
     <div className="container d-flex justify-content-center mt-5">
       <div className="card bg-dark text-white rounded-0 shadow"
         style={{ width: '300px' }}>
 
         <img
-          src="/sebastian.jpg"
+          src="/isma_image.jpeg"
           className="card-img-top"
-          alt="Foto de Sebastián"
+          alt="Foto de ismael"
           style={{ height: '280px', objectFit: 'cover' }}
         />
 
