@@ -12,6 +12,7 @@ const Componentcarlos = () => {
       />
       <span className="badge">Feature branch</span>
       <h2>Carlos Narvaez</h2>
+      <p> Ficha: 3494620</p>
       <p>
         This workspace follows a GitFlow-friendly delivery rhythm: clear branches,
         reviewable pull requests, and a stable production line.
