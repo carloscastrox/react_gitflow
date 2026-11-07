@@ -1,0 +1,150 @@
+.pablo-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  overflow: hidden;
+  border: 1px solid #e4e7ef;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgb(23 35 79 / 10%);
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.pablo-card__accent {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 7px;
+  background: linear-gradient(90deg, #635bff, #28b8a8);
+}
+
+.pablo-card__photo,
+.pablo-card__avatar {
+  display: grid;
+  width: min(100%, 220px);
+  aspect-ratio: 1;
+  place-items: center;
+  justify-self: center;
+  border: 7px solid #f0efff;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.pablo-card__photo {
+  object-fit: cover;
+}
+
+.pablo-card__avatar {
+  background: linear-gradient(145deg, #e8e7ff, #d6f5f0);
+  color: #39358e;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 750;
+  letter-spacing: -0.08em;
+}
+
+.pablo-card__content {
+  min-width: 0;
+}
+
+.pablo-card__eyebrow {
+  margin: 0 0 0.65rem;
+  color: #5148d7;
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pablo-card__name {
+  margin: 0;
+  color: #191c31;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.pablo-card__description {
+  margin: 0.85rem 0 1.75rem;
+  color: #656b7d;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.pablo-card__details {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.pablo-card__detail {
+  display: grid;
+  grid-template-columns: minmax(6rem, 0.55fr) minmax(0, 1fr);
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eceef3;
+}
+
+.pablo-card__detail dt {
+  color: #73798a;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pablo-card__detail dd {
+  min-width: 0;
+  margin: 0;
+  color: #25283b;
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .pablo-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    border-radius: 22px;
+    text-align: center;
+  }
+
+  .pablo-card__photo,
+  .pablo-card__avatar {
+    width: min(44vw, 160px);
+  }
+
+  .pablo-card__description {
+    margin-bottom: 1.25rem;
+  }
+
+  .pablo-card__detail {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pablo-card {
+    animation: pablo-card-enter 500ms ease-out both;
+  }
+
+  @keyframes pablo-card-enter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

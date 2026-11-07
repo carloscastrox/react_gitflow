@@ -1,12 +1,11 @@
-import { useState } from "react";
-import heroImg from "./assets/hero.png";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import "./App.css";
-import { ComponentPablo } from "./features/JuanPablo/ComponentPablo";
+import { useState } from 'react'
+import heroImg from './assets/hero.png'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -30,9 +29,6 @@ function App() {
           Count is {count}
         </button>
       </section>
-
-      {/* Componente de Juan Pablo */}
-      <ComponentPablo />
 
       <div className="ticks"></div>
 
@@ -120,7 +116,7 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
