@@ -1,0 +1,241 @@
+.maya-profile {
+  --maya-ink: #203831;
+  --maya-muted: #596660;
+  --maya-line: #dce2dc;
+  box-sizing: border-box;
+  display: grid;
+  flex: 1;
+  min-height: 100svh;
+  width: 100%;
+  place-items: center;
+  padding: clamp(24px, 5vw, 72px);
+  background: #f1f3ee;
+  color: var(--maya-ink);
+  color-scheme: light;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.maya-profile *,
+.maya-profile *::before,
+.maya-profile *::after {
+  box-sizing: border-box;
+}
+
+.maya-profile__card {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.35fr);
+  width: 100%;
+  max-width: 980px;
+  overflow: hidden;
+  border: 1px solid var(--maya-line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 20px 64px -32px rgb(27 48 38 / 24%);
+}
+
+.maya-profile__portrait-panel {
+  padding: 30px;
+  border-right: 1px solid var(--maya-line);
+  background: #e8ede5;
+}
+
+.maya-profile__identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  color: #40564a;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.maya-profile__monogram {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid #b9c7b8;
+  border-radius: 50%;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+}
+
+.maya-profile__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 45%;
+  border: 1px solid rgb(32 56 49 / 12%);
+  border-radius: 8px;
+}
+
+.maya-profile .maya-profile__portrait-caption {
+  margin: 18px 0 0;
+  color: #52634f;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.maya-profile__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(30px, 4vw, 56px);
+}
+
+.maya-profile .maya-profile__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px;
+  color: var(--maya-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.maya-profile__accent {
+  display: block;
+  width: 22px;
+  height: 2px;
+  flex-shrink: 0;
+  background: #7d8b63;
+}
+
+.maya-profile .maya-profile__name {
+  margin: 0;
+  color: var(--maya-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(34px, 4.4vw, 48px);
+  font-weight: 400;
+  letter-spacing: -1.6px;
+  line-height: 1.16;
+}
+
+.maya-profile__name span {
+  display: block;
+}
+
+.maya-profile__education {
+  margin-top: 34px;
+  padding-top: 25px;
+  border-top: 1px solid var(--maya-line);
+}
+
+.maya-profile .maya-profile__label {
+  margin: 0 0 10px;
+  color: var(--maya-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.maya-profile .maya-profile__program {
+  max-width: 370px;
+  margin: 0;
+  color: #34483f;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.maya-profile__footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.maya-profile__program-code {
+  padding: 4px 10px;
+  border: 1px solid #ccd6c8;
+  border-radius: 4px;
+  background: #f5f7f2;
+  color: #40563d;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  line-height: 1.6;
+}
+
+.maya-profile__footer-label {
+  color: var(--maya-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@media (max-width: 680px) {
+  .maya-profile {
+    padding: 24px 16px;
+  }
+
+  .maya-profile__card {
+    max-width: 440px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .maya-profile__portrait-panel {
+    padding: 22px 28px 24px;
+    border-right: 0;
+    border-bottom: 1px solid var(--maya-line);
+  }
+
+  .maya-profile__identity {
+    margin-bottom: 20px;
+  }
+
+  .maya-profile__photo {
+    width: min(100%, 210px);
+    margin-inline: auto;
+    aspect-ratio: 1;
+  }
+
+  .maya-profile .maya-profile__portrait-caption {
+    text-align: center;
+  }
+
+  .maya-profile__content {
+    padding: 30px 26px;
+  }
+
+  .maya-profile .maya-profile__eyebrow {
+    margin-bottom: 18px;
+  }
+
+  .maya-profile .maya-profile__name {
+    font-size: clamp(30px, 7.9vw, 36px);
+    letter-spacing: -1px;
+  }
+
+  .maya-profile__education {
+    margin-top: 25px;
+    padding-top: 21px;
+  }
+
+  .maya-profile .maya-profile__program {
+    font-size: 18px;
+  }
+
+  .maya-profile__footer {
+    margin-top: 24px;
+  }
+}
