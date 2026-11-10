@@ -1,13 +1,13 @@
-import './App.css'
-import ComponentThomas from './features/ThomasCano/componentThomas'
+import React from 'react';
+import Componentesantiago from './features/santiagoAvendaño/Componentesantiago';
+import './App.css';
 
 function App() {
-
   return (
     <>
-     <ComponentThomas/>
-    </>
-  )
+      <Componentesantiago />
+   </>
+  );
 }
 
-export default App
+export default App;
