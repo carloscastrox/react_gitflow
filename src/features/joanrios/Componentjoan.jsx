@@ -1,5 +1,5 @@
 import React from 'react'
-import joanFoto from './assets/joan.jpeg'
+import joanFoto from '../../assets/imgjoan.jpeg'
 import './Componentjoan.css'
 
 export const Componentjoan = () => {
@@ -36,4 +36,3 @@ export const Componentjoan = () => {
 export const Componentjoa = Componentjoan
 
 export default Componentjoan
-
