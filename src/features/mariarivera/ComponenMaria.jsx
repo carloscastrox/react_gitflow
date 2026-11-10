@@ -1,5 +1,5 @@
 import React from 'react'
-import fotomaria from 'public/fotomaria.jpg'
+import fotomaria from '../../assets/imgmariapaula.jpeg'
 
 export const Componentmarria = () => {
   return (
