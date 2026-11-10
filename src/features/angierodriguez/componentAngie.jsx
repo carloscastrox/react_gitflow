@@ -1,5 +1,5 @@
 import React from 'react'
-import fotoAngie from 'public/foto.jpeg'
+import fotoAngie from '..assets/imgAngie.jpeg'
 export const componentAngie = () => {
   return (
      <div style={{ textAlign: 'center', padding: '20px' }}>
