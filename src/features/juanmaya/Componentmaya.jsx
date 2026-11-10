@@ -1,4 +1,4 @@
-import profilePhoto from './assets/foto_perfil_maya.jpg'
+import profilePhoto from '../../assets/imgmaya.jpg'
 import './Componentmaya.css'
 
 export default function Componentmaya() {
