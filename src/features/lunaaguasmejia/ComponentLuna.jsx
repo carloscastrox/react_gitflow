@@ -1,5 +1,5 @@
 import React from 'react'
-import FotoLuna from 'public/FotoLuna.jpg'
+import FotoLuna from 'src/assets/imglunaa.jpg'
 
 export const ComponentLuna = () => {
   return (
