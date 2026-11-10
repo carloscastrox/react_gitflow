@@ -46,7 +46,7 @@ export const Main = () => {
     <main className="container my-5 flex-grow-1" id="componentes">
       <div className="row mb-4">
         <div className="col-12 text-center">
-          <h1 className="fw-bold">Catálogo de 25 Componentes</h1>
+          <p className="h1 fw-bold">Catálogo de 25 Componentes</p>
           <p className="text-muted">Selecciona cualquier tarjeta para desplegar su respectivo componente en una ventana modal.</p>
         </div>
       </div>
@@ -67,7 +67,7 @@ export const Main = () => {
                   <span className={`badge mb-2 ${card.id <= 2 ? 'bg-success' : 'bg-secondary'}`}>
                     ID: {card.id}
                   </span>
-                  <h5 className="card-title h6 fw-bold">{card.title}</h5>
+                  <p className="h5 card-title h6 fw-bold">{card.title}</p>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
                 <button 
