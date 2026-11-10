@@ -1,20 +1,12 @@
 import './App.css'
 import ComponentNata from './features/nataliasuarez/ComponentNata'
+import Componentesantiago from './features/santiagoAvendaño'
 import { ComponetIsabella } from './features/isabellazambrano/ComponetIsabella'
 
 function App() {
   return (
-    <main
-      style={{
-        padding: '40px 20px',
-        minHeight: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '24px',
-        backgroundColor: '#f4f6f8',
-      }}
-    >
+    <main className="app-showcase">
+      <Componentesantiago />
       <ComponetIsabella />
       <ComponentNata />
     </main>
