@@ -1,6 +1,6 @@
-import imgCarlos from '../../imgcarlos.jpg'
+import imgCarlos from '../../assets/imgcarlos.jpg'
 
-const Componentcarlos = () => {
+export const ComponentCarlosNarvaez = () => {
   return (
     <article className="feature-card">
       <img
@@ -22,4 +22,4 @@ const Componentcarlos = () => {
   )
 }
 
-export default Componentcarlos
+export default ComponentCarlosNarvaez
