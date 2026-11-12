@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 // Aquí puedes importar otros componentes según sea necesario
+import { ComponentThomas } from "../thomascano/Componentethomas";
 
 
 
@@ -16,6 +17,7 @@ export const Main = () => {
     
     if (id === 1) componentName = 'Component carlos';
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 24) componentName = 'Component Thomas';
 
     return {
       id,
@@ -29,6 +31,7 @@ export const Main = () => {
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 24) return <ComponentThomas/>;
     
     const currentName = cardsData.find(c => c.id === id)?.name;
     
@@ -46,7 +49,7 @@ export const Main = () => {
     <main className="container my-5 flex-grow-1" id="componentes">
       <div className="row mb-4">
         <div className="col-12 text-center">
-          <p className="h1 fw-bold">Catálogo de 25 Componentes</p>
+          <h1 className="fw-bold">Catálogo de 25 Componentes</h1>
           <p className="text-muted">Selecciona cualquier tarjeta para desplegar su respectivo componente en una ventana modal.</p>
         </div>
       </div>
@@ -64,14 +67,14 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 2 ? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${card.id <= 24 ? 'bg-success' : 'bg-secondary'}`}>
                     ID: {card.id}
                   </span>
-                  <p className="h5 card-title h6 fw-bold">{card.title}</p>
+                  <h5 className="card-title h6 fw-bold">{card.title}</h5>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
                 <button 
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 2 ? 'btn-success' : 'btn-outline-primary'}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 24 ? 'btn-success' : 'btn-outline-primary'}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
