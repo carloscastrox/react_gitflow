@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 // Aquí puedes importar otros componentes según sea necesario
-
+import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
 
 
 
@@ -15,6 +15,7 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
+    if (id === 2) componentName = 'Component Aleja';
     // Agregar la lógica para otros componentes según sea necesario
 
     return {
@@ -28,6 +29,7 @@ export const Main = () => {
   // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
+    if (id === 2) return <ComponentAleja />;
     // Agregar la lógica para otros componentes según sea necesario
     
     const currentName = cardsData.find(c => c.id === id)?.name;
