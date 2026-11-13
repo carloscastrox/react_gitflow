@@ -1,0 +1,162 @@
+
+/* Contenedor principal */
+.ismael-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 15px;
+  box-sizing: border-box;
+}
+
+/* Tarjeta */
+.ismael-card {
+  width: 320px;
+  max-width: 100%;
+  background: #151515;
+  color: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+/* Efecto al pasar el cursor */
+.ismael-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(218, 165, 32, 0.15);
+  border-color: #b99545;
+}
+
+/* Contenedor de imagen */
+.ismael-image-container {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fotografía */
+.ismael-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.ismael-card:hover .ismael-image {
+  transform: scale(1.06);
+}
+
+/* Degradado sobre la imagen */
+.ismael-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(
+    transparent,
+    rgba(21, 21, 21, 0.9)
+  );
+}
+
+/* Contenido de la tarjeta */
+.ismael-content {
+  padding: 22px;
+  text-align: center;
+}
+
+/* Etiqueta superior */
+.ismael-tag {
+  display: inline-block;
+  color: #d6b15e;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+/* Nombre */
+.ismael-name {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Línea decorativa */
+.ismael-divider {
+  width: 55px;
+  height: 3px;
+  background: #c9a34e;
+  margin: 17px auto 22px;
+  border-radius: 5px;
+}
+
+/* Información */
+.ismael-info {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+/* Cada descripción */
+.ismael-info-item {
+  text-align: center;
+}
+
+.ismael-label {
+  color: #c9a34e;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.ismael-info-item p {
+  color: #dddddd;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 5px 0 0;
+}
+
+/* Pie de tarjeta */
+.ismael-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #333333;
+  color: #777777;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.ismael-dot {
+  width: 7px;
+  height: 7px;
+  background: #c9a34e;
+  border-radius: 50%;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 400px) {
+  .ismael-card {
+    width: 290px;
+  }
+
+  .ismael-image-container {
+    height: 270px;
+  }
+
+  .ismael-name {
+    font-size: 22px;
+  }
+}
