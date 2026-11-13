@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
-// Aquí puedes importar otros componentes según sea necesario
 import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
+import { Componentalejo } from '../alejandromesa/Componentalejo'
+
 
 
 
@@ -13,9 +14,10 @@ export const Main = () => {
   const cardsData = Array.from({ length: 25 }, (_, i) => {
     const id = i + 1;
     let componentName = `Componente${id}`;
-    
+
     if (id === 1) componentName = 'Component carlos';
     if (id === 2) componentName = 'Component Aleja';
+    if (id === 3) componentName = 'Component alejo'
     // Agregar la lógica para otros componentes según sea necesario
 
     return {
@@ -30,10 +32,11 @@ export const Main = () => {
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
     if (id === 2) return <ComponentAleja />;
+    if (id === 3) return <Componentalejo />;
     // Agregar la lógica para otros componentes según sea necesario
-    
+
     const currentName = cardsData.find(c => c.id === id)?.name;
-    
+
     return (
       <div className="py-4 text-center">
         <h4 className="fw-bold mb-3">¡Bienvenido a <span className="text-primary">{currentName}</span>!</h4>
@@ -57,7 +60,7 @@ export const Main = () => {
       <div className="row g-4">
         {cardsData.map((card) => (
           <div key={card.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div 
+            <div
               className="card h-100 shadow-sm border"
               style={{ cursor: 'pointer', transition: 'transform 0.2s, box-shadow 0.2s' }}
               onClick={() => setActiveComponentId(card.id)}
@@ -66,14 +69,14 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 2 ? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${card.id <= 3 ? 'bg-success' : 'bg-secondary'}`}>
                     ID: {card.id}
                   </span>
                   <p className="h5 card-title h6 fw-bold">{card.title}</p>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
-                <button 
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 2 ? 'btn-success' : 'btn-outline-primary'}`}
+                <button
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 3 ? 'btn-success' : 'btn-outline-primary'}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
@@ -89,15 +92,15 @@ export const Main = () => {
 
       {/* Modal de Bootstrap */}
       {activeComponentId !== null && (
-        <div 
-          className="modal fade show d-block" 
-          tabIndex="-1" 
+        <div
+          className="modal fade show d-block"
+          tabIndex="-1"
           role="dialog"
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}
           onClick={() => setActiveComponentId(null)}
         >
-          <div 
-            className="modal-dialog modal-lg modal-dialog-centered" 
+          <div
+            className="modal-dialog modal-lg modal-dialog-centered"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="modal-content shadow-lg">
@@ -105,9 +108,9 @@ export const Main = () => {
                 <h5 className="modal-title fw-bold">
                   {cardsData.find(c => c.id === activeComponentId)?.name}
                 </h5>
-                <button 
-                  type="button" 
-                  className="btn-close" 
+                <button
+                  type="button"
+                  className="btn-close"
                   onClick={() => setActiveComponentId(null)}
                   aria-label="Cerrar"
                 ></button>
@@ -116,9 +119,9 @@ export const Main = () => {
                 {renderModalContent(activeComponentId)}
               </div>
               <div className="modal-footer border-top">
-                <button 
-                  type="button" 
-                  className="btn btn-secondary btn-sm" 
+                <button
+                  type="button"
+                  className="btn btn-secondary btn-sm"
                   onClick={() => setActiveComponentId(null)}
                 >
                   Cerrar
