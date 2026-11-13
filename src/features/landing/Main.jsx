@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 
 // Aquí puedes importar otros componentes según sea necesario
+
 import { ComponentThomas } from "../thomascano/Componentethomas";
 import { Componentesantiago } from '../santiagozapata/santiagozapata'
 import { Ronaldlunacom } from '../ronaldluna/Ronaldlunacom'
@@ -72,6 +73,7 @@ export const Main = () => {
     if (id === 1) return <Componentcarlos />;
 
     // Agregar la lógica para otros componentes según sea necesario
+
     if (id === 24) return <ComponentThomas/>;
     if (id === 22) return <Componentesantiago />;
     if (id === 21) return <Ronaldlunacom />;
@@ -135,6 +137,7 @@ export const Main = () => {
 
                 <button 
                   className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 24 ? 'btn-success' : 'btn-outline-primary'}`}
+
 
                   onClick={(e) => {
                     e.stopPropagation();
