@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
+import Componentcamilocordoba from "../camilocordoba/Componentcamilocordoba";
 // Aquí puedes importar otros componentes según sea necesario
 import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
 
@@ -15,8 +16,11 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
+   // Agregar la lógica para otros componentes según sea necesario
+
+    if (id === 4) componentName = 'Component Camilo'
     if (id === 2) componentName = 'Component Aleja';
-    // Agregar la lógica para otros componentes según sea necesario
+    
 
     return {
       id,
@@ -31,6 +35,7 @@ export const Main = () => {
     if (id === 1) return <Componentcarlos />;
     if (id === 2) return <ComponentAleja />;
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 4) return <Componentcamilocordoba />;
     
     const currentName = cardsData.find(c => c.id === id)?.name;
     
@@ -66,14 +71,14 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 2 ? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${card.id <= 4 ? 'bg-success' : 'bg-secondary'}`}>
                     ID: {card.id}
                   </span>
                   <p className="h5 card-title h6 fw-bold">{card.title}</p>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
                 <button 
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 2 ? 'btn-success' : 'btn-outline-primary'}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 4 ? 'btn-success' : 'btn-outline-primary'}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
