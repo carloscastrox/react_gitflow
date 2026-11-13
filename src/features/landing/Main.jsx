@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 
 // Aquí puedes importar otros componentes según sea necesario
+import { Ronaldlunacom } from '../ronaldluna/Ronaldlunacom'
 import { Componentmarria as ComponentMaria } from '../mariarivera/ComponenMaria'
 import { Componentkevin } from '../kevinosorio/Componentkevin'
 import { Componentpablo } from "../juanpablo/Componentpablo";
@@ -32,8 +33,11 @@ export const Main = () => {
     if (id === 1) componentName = 'Component carlos';
 
     // Agregar la lógica para otros componentes según sea necesario
+
+    if (id === 21) componentName = 'Component ronald';
+    //Falta el componente 20
     if (id === 19) componentName = 'Component María';
-    //Falta el componente 13
+    //Falta el componente 18
     if (id === 17) componentName = 'Component kevin';
     if (id === 16) componentName = "Component pablo";
     if (id === 15) componentName = 'Component maya';
@@ -64,6 +68,8 @@ export const Main = () => {
     if (id === 1) return <Componentcarlos />;
 
     // Agregar la lógica para otros componentes según sea necesario
+
+    if (id === 21) return <Ronaldlunacom />;
     if (id === 19) return <ComponentMaria />;
     if (id === 17) return <Componentkevin />;
     if (id === 16) return <Componentpablo />;
@@ -115,15 +121,17 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 19 ? 'bg-success' : 'bg-secondary'}`}>
+
+                  <span className={`badge mb-2 ${card.id <= 21 ? 'bg-success' : 'bg-secondary'}`}>
 
                     ID: {card.id}
                   </span>
                   <p className="h5 card-title h6 fw-bold">{card.title}</p>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
-                <button
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 19 ? 'btn-success' : 'btn-outline-primary'}`}
+
+                <button 
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 21 ? 'btn-success' : 'btn-outline-primary'}`}
 
                   onClick={(e) => {
                     e.stopPropagation();
