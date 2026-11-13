@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
+import { ComponentNata } from '../features/nataliasuarez/ComponentNata';
 // Aquí puedes importar otros componentes según sea necesario
 
 
@@ -15,6 +16,7 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
+    if (id === 20) componentName = 'ComponentNata';
     // Agregar la lógica para otros componentes según sea necesario
 
     return {
@@ -28,6 +30,7 @@ export const Main = () => {
   // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
+    if (id === 20) return <ComponentNata />;
     // Agregar la lógica para otros componentes según sea necesario
     
     const currentName = cardsData.find(c => c.id === id)?.name;
