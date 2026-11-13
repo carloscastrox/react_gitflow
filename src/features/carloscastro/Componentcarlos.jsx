@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export const Componentcarlos = () => {
   return (
@@ -11,5 +11,4 @@ export const Componentcarlos = () => {
         personalizadas para este módulo.
       </p>
     </div>
-  );
-}
+  )
