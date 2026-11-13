@@ -1,85 +1,31 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Componentcarlos } from "../carloscastro/Componentcarlos";
-// Aquí puedes importar otros componentes según sea necesario
-import Componentpablo from "../juanpablo/ComponentPablo";
-// Aquí puedes importar otros componentes según sea necesario
+import ComponentPablo from "../juanpablo/Componentpablo";
+
+// Aquí cada quien agrega su componente: id: { name, contenido }
+const componentes = {
+  1: { name: "Component carlos", contenido: <Componentcarlos /> },
+  2: { name: "Component Pablo", contenido: <ComponentPablo /> },
+};
+
 export const Main = () => {
   const [activeComponentId, setActiveComponentId] = useState(null);
 
-  // Generación de los 25 componentes con sus respectivos nombres
   const cardsData = Array.from({ length: 25 }, (_, i) => {
     const id = i + 1;
-    let componentName = `Componente${id}`;
-    let ComponentPablo = `Componente${id}`;
-
-    if (id === 1) componentName = "Component carlos";
-    // Agregar la lógica para otros componentes según sea necesario
-    else if (id === 2) ComponentPablo = "ComponentPablo";
-    else if (id === 3) componentName = "Componente2";
-    else if (id === 4) componentName = "Componente2";
-    else if (id === 5) componentName = "Componente2";
-    else if (id === 6) componentName = "Componente2";
-    else if (id === 7) componentName = "Componente2";
-    else if (id === 8) componentName = "Componente2";
-    else if (id === 9) componentName = "Componente2";
-    else if (id === 10) componentName = "Componente2";
-    else if (id === 11) componentName = "Componente2";
-    else if (id === 12) componentName = "Componente2";
-    else if (id === 13) componentName = "Componente2";
-    else if (id === 14) componentName = "Componente2";
-    else if (id === 15) componentName = "Componente2";
-    else if (id === 16) componentName = "Componente2";
-    else if (id === 17) componentName = "Componente2";
-    else if (id === 18) componentName = "Componente2";
-    else if (id === 19) componentName = "Componente2";
-    else if (id === 20) componentName = "Componente2";
-    else if (id === 21) componentName = "Componente2";
-    else if (id === 22) componentName = "Componente2";
-    else if (id === 23) componentName = "Componente2";
-    else if (id === 24) componentName = "Componente2";
-    else if (id === 25) componentName = "Componente2";
+    const name = componentes[id]?.name ?? `Componente ${id}`;
     return {
       id,
-      name: componentName,
+      name,
       title: `Módulo #${id}`,
-      description: `Vista correspondiente al componente ${componentName}. Haz clic para abrir en el modal.`,
+      description: `Vista correspondiente al componente ${name}. Haz clic para abrir en el modal.`,
     };
   });
 
-  // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
-    if (id === 1) return <Componentcarlos />;
-    // Agregar la lógica para otros componentes según sea necesario
-    else if (id === 2)
-      return (
-        <div>
-          <Componentpablo />
-        </div>
-      );
-    else if (id === 3) return <div>Contenido del Componente 3</div>;
-    else if (id === 4) return <div>Contenido del Componente 4</div>;
-    else if (id === 5) return <div>Contenido del Componente 5</div>;
-    else if (id === 6) return <div>Contenido del Componente 6</div>;
-    else if (id === 7) return <div>Contenido del Componente 7</div>;
-    else if (id === 8) return <div>Contenido del Componente 8</div>;
-    else if (id === 9) return <div>Contenido del Componente 9</div>;
-    else if (id === 10) return <div>Contenido del Componente 10</div>;
-    else if (id === 12) return <div>Contenido del Componente 11</div>;
-    else if (id === 13) return <div>Contenido del Componente 11</div>;
-    else if (id === 14) return <div>Contenido del Componente 11</div>;
-    else if (id === 15) return <div>Contenido del Componente 11</div>;
-    else if (id === 16) return <div>Contenido del Componente 11</div>;
-    else if (id === 17) return <div>Contenido del Componente 11</div>;
-    else if (id === 18) return <div>Contenido del Componente 11</div>;
-    else if (id === 19) return <div>Contenido del Componente 11</div>;
-    else if (id === 20) return <div>Contenido del Componente 11</div>;
-    else if (id === 21) return <div>Contenido del Componente 11</div>;
-    else if (id === 22) return <div>Contenido del Componente 11</div>;
-    else if (id === 23) return <div>Contenido del Componente 11</div>;
-    else if (id === 24) return <div>Contenido del Componente 11</div>;
-    else if (id === 25) return <div>Contenido del Componente 11</div>;
-    const currentName = cardsData.find((c) => c.id === id)?.name;
+    if (componentes[id]) return componentes[id].contenido;
 
+    const currentName = cardsData.find((c) => c.id === id)?.name;
     return (
       <div className="py-4 text-center">
         <h4 className="fw-bold mb-3">
@@ -105,7 +51,6 @@ export const Main = () => {
         </div>
       </div>
 
-      {/* Grid de 25 Tarjetas */}
       <div className="row g-4">
         {cardsData.map((card) => (
           <div key={card.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -126,7 +71,7 @@ export const Main = () => {
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
                   <span
-                    className={`badge mb-2 ${card.id <= 2 ? "bg-success" : "bg-secondary"}`}
+                    className={`badge mb-2 ${componentes[card.id] ? "bg-success" : "bg-secondary"}`}
                   >
                     ID: {card.id}
                   </span>
@@ -136,7 +81,7 @@ export const Main = () => {
                   </p>
                 </div>
                 <button
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 2 ? "btn-success" : "btn-outline-primary"}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${componentes[card.id] ? "btn-success" : "btn-outline-primary"}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
@@ -150,7 +95,6 @@ export const Main = () => {
         ))}
       </div>
 
-      {/* Modal de Bootstrap */}
       {activeComponentId !== null && (
         <div
           className="modal fade show d-block"
