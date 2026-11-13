@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 
 // Aquí puedes importar otros componentes según sea necesario
-import { ComponentNata } from '../nataliasuarez/ComponentNata'
 import { Componentmarria as ComponentMaria } from '../mariarivera/ComponenMaria'
 import { Componentkevin } from '../kevinosorio/Componentkevin'
 import { Componentpablo } from "../juanpablo/Componentpablo";
@@ -13,12 +12,15 @@ import Componentjoan from '../joanrios/Componentjoan.jsx'
 import { ComponentJacobo } from '../jacobopaniagua/componentjacobo'
 import { Componentisabella } from '../isabellazambrano/Componentisabella'
 import { Componentfarid } from '../faridcoterah/Componentfarid'
-import { Componentcarlosnarvaez } from '../carlosnarvaez/Componentcarlosnarvaez'
+import {Componentcarlosnarvaez} from '../carlosnarvaez/Componentcarlosnarvaez';
 import { ComponentBraian } from '../Braianquintero/Componentbraian'
-import Componentcamilocordoba from '../camilocordoba/Componentcamilocordoba'
+import Componentcamilocordoba from "../camilocordoba/Componentcamilocordoba"
 import { ComponentAngie } from '../angierodriguez/Componentangie'
 import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
 
+
+
+//Aquí puedes importar otros componentes según sea necesario
 export const Main = () => {
   const [activeComponentId, setActiveComponentId] = useState(null);
 
@@ -28,8 +30,8 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
+
     // Agregar la lógica para otros componentes según sea necesario
-    if (id === 20) componentName = 'ComponentNata';
     if (id === 19) componentName = 'Component María';
     //Falta el componente 13
     if (id === 17) componentName = 'Component kevin';
@@ -47,8 +49,8 @@ export const Main = () => {
     if (id === 5) componentName = 'Component Angie';
     if (id === 4) componentName = 'Component Camilo';
     //Falta el componente 3
-    if (id === 2) componentName = 'Component Aleja' 
-
+    if (id === 2) componentName = 'Component Aleja';
+   
     return {
       id,
       name: componentName,
@@ -62,7 +64,6 @@ export const Main = () => {
     if (id === 1) return <Componentcarlos />;
 
     // Agregar la lógica para otros componentes según sea necesario
-    if (id === 20) return <ComponentNata />;
     if (id === 19) return <ComponentMaria />;
     if (id === 17) return <Componentkevin />;
     if (id === 16) return <Componentpablo />;
@@ -79,11 +80,12 @@ export const Main = () => {
     if (id === 4) return <Componentcamilocordoba />;
     if (id === 2) return <ComponentAleja />;
     
+
     const currentName = cardsData.find(c => c.id === id)?.name;
     
     return (
       <div className="py-4 text-center">
-        <h4 className="fw-bold mb-3">¡Bienvenido al <span className="text-primary">{currentName}</span>!</h4>
+        <h4 className="fw-bold mb-3">¡Bienvenido a <span className="text-primary">{currentName}</span>!</h4>
         <p className="text-muted mb-0">
           Este es el contenedor del componente número {id}. Aquí puedes programar la lógica e interfaz específica de este módulo.
         </p>
@@ -113,14 +115,15 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 20 ? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${card.id <= 19 ? 'bg-success' : 'bg-secondary'}`}>
+
                     ID: {card.id}
                   </span>
                   <p className="h5 card-title h6 fw-bold">{card.title}</p>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
                 <button
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 20 ? 'btn-success' : 'btn-outline-primary'}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 19 ? 'btn-success' : 'btn-outline-primary'}`}
 
                   onClick={(e) => {
                     e.stopPropagation();
@@ -177,5 +180,5 @@ export const Main = () => {
         </div>
       )}
     </main>
-  );
-};
+  )
+}
