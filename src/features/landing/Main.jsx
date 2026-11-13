@@ -1,31 +1,34 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Componentcarlos } from "../carloscastro/Componentcarlos";
-import ComponentPablo from "../juanpablo/Componentpablo";
-
-// Aquí cada quien agrega su componente: id: { name, contenido }
-const componentes = {
-  1: { name: "Component carlos", contenido: <Componentcarlos /> },
-  2: { name: "Component Pablo", contenido: <ComponentPablo /> },
-};
-
+// Aquí puedes importar otros componentes según sea necesario
+import Componentpablo from "../juanpablo/Componentpablo";
+// Aquí puedes importar otros componentes según sea necesario
 export const Main = () => {
   const [activeComponentId, setActiveComponentId] = useState(null);
 
+  // Generación de los 25 componentes con sus respectivos nombres
   const cardsData = Array.from({ length: 25 }, (_, i) => {
     const id = i + 1;
-    const name = componentes[id]?.name ?? `Componente ${id}`;
+    let componentName = `Componente${id}`;
+
+    if (id === 1) componentName = "Component carlos";
+    // Agregar la lógica para otros componentes según sea necesario
+    if (id === 16) componentName = "Component pablo";
     return {
       id,
-      name,
+      name: componentName,
       title: `Módulo #${id}`,
-      description: `Vista correspondiente al componente ${name}. Haz clic para abrir en el modal.`,
+      description: `Vista correspondiente al componente ${componentName}. Haz clic para abrir en el modal.`,
     };
   });
 
+  // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
-    if (componentes[id]) return componentes[id].contenido;
-
+    if (id === 1) return <Componentcarlos />;
+    // Agregar la lógica para otros componentes según sea necesario
+    if (id === 16) return <Componentpablo />;
     const currentName = cardsData.find((c) => c.id === id)?.name;
+
     return (
       <div className="py-4 text-center">
         <h4 className="fw-bold mb-3">
@@ -51,6 +54,7 @@ export const Main = () => {
         </div>
       </div>
 
+      {/* Grid de 25 Tarjetas */}
       <div className="row g-4">
         {cardsData.map((card) => (
           <div key={card.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -71,7 +75,7 @@ export const Main = () => {
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
                   <span
-                    className={`badge mb-2 ${componentes[card.id] ? "bg-success" : "bg-secondary"}`}
+                    className={`badge mb-2 ${card.id <= 16 ? "bg-success" : "bg-secondary"}`}
                   >
                     ID: {card.id}
                   </span>
@@ -81,7 +85,7 @@ export const Main = () => {
                   </p>
                 </div>
                 <button
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${componentes[card.id] ? "btn-success" : "btn-outline-primary"}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 16 ? "btn-success" : "btn-outline-primary"}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
@@ -95,6 +99,7 @@ export const Main = () => {
         ))}
       </div>
 
+      {/* Modal de Bootstrap */}
       {activeComponentId !== null && (
         <div
           className="modal fade show d-block"
