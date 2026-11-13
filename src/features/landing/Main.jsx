@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
-import { Componentcamilocordoba} from '..//Componentcamilocordoba'
+import Componentcamilocordoba from "../camilocordoba/Componentcamilocordoba";
 // Aquí puedes importar otros componentes según sea necesario
 
 
