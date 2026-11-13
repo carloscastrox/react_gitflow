@@ -1,19 +1,18 @@
-import { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Header } from './features/landing/Header'
-import { Footer } from './features/landing/Footer'
-import { Main } from './features/landing/Main'
-
+import { Header } from "./features/landing/Header";
+import { Footer } from "./features/landing/Footer";
+import { Main } from "./features/landing/Main";
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-bs-theme', theme);
+    document.documentElement.setAttribute("data-bs-theme", theme);
   }, [theme]);
 
   return (
@@ -26,7 +25,7 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
