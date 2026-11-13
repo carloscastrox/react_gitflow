@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 // Aquí puedes importar otros componentes según sea necesario
-
+import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
 
 
 
@@ -15,6 +15,7 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
+    if (id === 2) componentName = 'Component Aleja';
     // Agregar la lógica para otros componentes según sea necesario
 
     return {
@@ -28,6 +29,7 @@ export const Main = () => {
   // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
+    if (id === 2) return <ComponentAleja />;
     // Agregar la lógica para otros componentes según sea necesario
     
     const currentName = cardsData.find(c => c.id === id)?.name;
@@ -46,7 +48,7 @@ export const Main = () => {
     <main className="container my-5 flex-grow-1" id="componentes">
       <div className="row mb-4">
         <div className="col-12 text-center">
-          <h1 className="fw-bold">Catálogo de 25 Componentes</h1>
+          <p className="h1 fw-bold">Catálogo de 25 Componentes</p>
           <p className="text-muted">Selecciona cualquier tarjeta para desplegar su respectivo componente en una ventana modal.</p>
         </div>
       </div>
@@ -67,7 +69,7 @@ export const Main = () => {
                   <span className={`badge mb-2 ${card.id <= 2 ? 'bg-success' : 'bg-secondary'}`}>
                     ID: {card.id}
                   </span>
-                  <h5 className="card-title h6 fw-bold">{card.title}</h5>
+                  <p className="h5 card-title h6 fw-bold">{card.title}</p>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
                 <button 
