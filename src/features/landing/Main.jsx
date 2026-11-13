@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
-import { ComponentNata } from "../nataliasuarez/ComponentNata";
+import { ComponentNata } from '../nataliasuarez/ComponentNata'
 // Aquí puedes importar otros componentes según sea necesario
-
-
-
+import Componentcamilocordoba from '../camilocordoba/Componentcamilocordoba'
+import { ComponentAngie } from '../angierodriguez/Componentangie'
+import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
 
 // Aquí puedes importar otros componentes según sea necesario
 export const Main = () => {
@@ -18,6 +18,9 @@ export const Main = () => {
     if (id === 1) componentName = 'Component carlos';
     if (id === 20) componentName = 'ComponentNata';
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 2) componentName = 'Component Aleja';
+    if (id === 4) componentName = 'Component Camilo';
+    if (id === 5) componentName = 'Component Angie';
 
     return {
       id,
@@ -32,6 +35,9 @@ export const Main = () => {
     if (id === 1) return <Componentcarlos />;
     if (id === 20) return <ComponentNata />;
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 2) return <ComponentAleja />;
+    if (id === 4) return <Componentcamilocordoba />;
+    if (id === 5) return <ComponentAngie />;
     
     const currentName = cardsData.find(c => c.id === id)?.name;
     
@@ -130,5 +136,5 @@ export const Main = () => {
         </div>
       )}
     </main>
-  )
-}
+  );
+};
