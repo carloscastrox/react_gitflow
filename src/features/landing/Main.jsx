@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 
 // Aquí puedes importar otros componentes según sea necesario
-
+import { Componentmaya } from '../juanmaya/Componentmaya'
 import { Componentismael } from '../ismaeldiaz/componentismael'
 import { Componentjohn } from '../johndiaz/Componentjohn'
 import Componentjoan from '../joanrios/Componentjoan.jsx'
@@ -27,10 +27,11 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
-    
-    // Agregar la lógica para otros componentes según sea necesario
 
+    // Agregar la lógica para otros componentes según sea necesario
+    if (id === 15) componentName = 'Component maya';
     if (id === 14) componentName = 'Componentismael';
+    //Falta el componente 13
     if (id === 12) componentName = 'Component john';
     if (id === 11) componentName = 'Component joan';
     if (id === 10) componentName = 'Component jacobo';
@@ -40,6 +41,7 @@ export const Main = () => {
     if (id === 6) componentName = 'Component braian';
     if (id === 5) componentName = 'Component Angie';
     if (id === 4) componentName = 'Component Camilo';
+    //Falta el componente 3
     if (id === 2) componentName = 'Component Aleja';
    
     return {
@@ -55,7 +57,7 @@ export const Main = () => {
     if (id === 1) return <Componentcarlos />;
 
     // Agregar la lógica para otros componentes según sea necesario
-
+    if (id === 15) return <Componentmaya />;
     if (id === 14) return <Componentismael />;
     if (id === 12) return <Componentjohn />;
     if (id === 11) return <Componentjoan />;
@@ -104,7 +106,7 @@ export const Main = () => {
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
 
-                  <span className={`badge mb-2 ${card.id <= 14? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${card.id <= 15 ? 'bg-success' : 'bg-secondary'}`}>
 
                     ID: {card.id}
                   </span>
@@ -113,7 +115,7 @@ export const Main = () => {
                 </div>
                 <button 
 
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 14? 'btn-success' : 'btn-outline-primary'}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 15 ? 'btn-success' : 'btn-outline-primary'}`}
 
                   onClick={(e) => {
                     e.stopPropagation();
