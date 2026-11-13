@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 import { ComponentNata } from '../nataliasuarez/ComponentNata'
+import { Componentismael } from '../ismaeldiaz/componentismael'
+import { Componentjohn } from '../johndiaz/Componentjohn'
+import Componentjoan from '../joanrios/Componentjoan.jsx'
+import { ComponentJacobo } from '../jacobopaniagua/componentjacobo'
+import { Componentisabella } from '../isabellazambrano/Componentisabella'
+import { Componentfarid } from '../faridcoterah/Componentfarid'
+import { Componentcarlosnarvaez } from '../carlosnarvaez/Componentcarlosnarvaez'
 import { ComponentBraian } from '../Braianquintero/Componentbraian'
 import Componentcamilocordoba from '../camilocordoba/Componentcamilocordoba'
 import { ComponentAngie } from '../angierodriguez/Componentangie'
@@ -15,12 +22,18 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
-    if (id === 6) componentName = 'Component braian';
-    if (id === 20) componentName = 'ComponentNata';
-    
     if (id === 2) componentName = 'Component Aleja';
     if (id === 4) componentName = 'Component Camilo';
     if (id === 5) componentName = 'Component Angie';
+    if (id === 6) componentName = 'Component braian';
+    if (id === 7) componentName = 'Component carlos Narvaez';
+    if (id === 8) componentName = 'Component farid';
+    if (id === 9) componentName = 'Component isabella';
+    if (id === 10) componentName = 'Component jacobo';
+    if (id === 11) componentName = 'Component joan';
+    if (id === 12) componentName = 'Component john';
+    if (id === 14) componentName = 'Componentismael';
+    if (id === 20) componentName = 'ComponentNata';
 
     return {
       id,
@@ -33,12 +46,18 @@ export const Main = () => {
   // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
-    if (id === 6) return <ComponentBraian />;
-    if (id === 20) return <ComponentNata />;
-    
     if (id === 2) return <ComponentAleja />;
     if (id === 4) return <Componentcamilocordoba />;
     if (id === 5) return <ComponentAngie />;
+    if (id === 6) return <ComponentBraian />;
+    if (id === 7) return <Componentcarlosnarvaez />;
+    if (id === 8) return <Componentfarid />;
+    if (id === 9) return <Componentisabella />;
+    if (id === 10) return <ComponentJacobo />;
+    if (id === 11) return <Componentjoan />;
+    if (id === 12) return <Componentjohn />;
+    if (id === 14) return <Componentismael />;
+    if (id === 20) return <ComponentNata />;
     
     const currentName = cardsData.find(c => c.id === id)?.name;
     
@@ -74,14 +93,14 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 6 || card.id === 20 ? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${(card.id <= 14 && card.id !== 3 && card.id !== 13) || card.id === 20 ? 'bg-success' : 'bg-secondary'}`}>
                     ID: {card.id}
                   </span>
                   <p className="h5 card-title h6 fw-bold">{card.title}</p>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
                 <button 
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 6 || card.id === 20 ? 'btn-success' : 'btn-outline-primary'}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${(card.id <= 14 && card.id !== 3 && card.id !== 13) || card.id === 20 ? 'btn-success' : 'btn-outline-primary'}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
