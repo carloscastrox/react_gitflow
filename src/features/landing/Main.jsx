@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 // Aquí puedes importar otros componentes según sea necesario
-
+import { Componentfarid } from '../faridcoterah/Componentfarid'
 import {Componentcarlosnarvaez} from '../carlosnarvaez/Componentcarlosnarvaez';
 import { ComponentBraian } from '../Braianquintero/Componentbraian'
 import Componentcamilocordoba from "../camilocordoba/Componentcamilocordoba"
 import { ComponentAngie } from '../angierodriguez/Componentangie'
 import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
+
 
 
 // Aquí puedes importar otros componentes según sea necesario
@@ -20,7 +21,7 @@ export const Main = () => {
     
     if (id === 1) componentName = 'Component carlos';
     // Agregar la lógica para otros componentes según sea necesario
-
+    if (id === 8) componentName = 'Component farid';
     if (id === 7) componentName = 'Component carlos Narvaez';
     if (id === 6) componentName = 'Component braian';
     if (id === 5) componentName = 'Component Angie';
@@ -39,15 +40,12 @@ export const Main = () => {
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 8) return <Componentfarid />;
     if (id === 7) return <Componentcarlosnarvaez />;
     if (id === 6) return <ComponentBraian />;
     if (id === 5) return <ComponentAngie />;
     if (id === 4) return <Componentcamilocordoba />;
     if (id === 2) return <ComponentAleja />;
-    
- 
-  
-  
     
     const currentName = cardsData.find(c => c.id === id)?.name;
     
@@ -83,14 +81,16 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 7 ? 'bg-success' : 'bg-secondary'}`}>
+
+                  <span className={`badge mb-2 ${card.id <= 8 ? 'bg-success' : 'bg-secondary'}`}>
+
                     ID: {card.id}
                   </span>
                   <p className="h5 card-title h6 fw-bold">{card.title}</p>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
-                <button
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 7 ? 'btn-success' : 'btn-outline-primary'}`}
+                <button 
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 8 ? 'btn-success' : 'btn-outline-primary'}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
