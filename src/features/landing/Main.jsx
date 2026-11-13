@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 // Aquí puedes importar otros componentes según sea necesario
+import { Componentisabella } from '../isabellazambrano/Componentisabella'
 import { Componentfarid } from '../faridcoterah/Componentfarid'
 import {Componentcarlosnarvaez} from '../carlosnarvaez/Componentcarlosnarvaez';
 import { ComponentBraian } from '../Braianquintero/Componentbraian'
@@ -20,6 +21,10 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
+
+ 
+    if (id === 9) componentName = 'Component isabella';
+
     // Agregar la lógica para otros componentes según sea necesario
     if (id === 8) componentName = 'Component farid';
     if (id === 7) componentName = 'Component carlos Narvaez';
@@ -40,6 +45,7 @@ export const Main = () => {
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 9) return <Componentisabella />;
     if (id === 8) return <Componentfarid />;
     if (id === 7) return <Componentcarlosnarvaez />;
     if (id === 6) return <ComponentBraian />;
@@ -81,8 +87,7 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-
-                  <span className={`badge mb-2 ${card.id <= 8 ? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${card.id <= 9 ? 'bg-success' : 'bg-secondary'}`}>
 
                     ID: {card.id}
                   </span>
@@ -90,7 +95,8 @@ export const Main = () => {
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
                 <button 
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 8 ? 'btn-success' : 'btn-outline-primary'}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 9 ? 'btn-success' : 'btn-outline-primary'}`}
+
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
