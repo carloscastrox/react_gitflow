@@ -1,14 +1,16 @@
 import React from 'react';
-import './PerfilSENA.css';
+// 1. Importa la imagen (revisa que sean dos ../ para salir de camilocordoba y de features)
+import fotoCamilo from '../../assets/imgcamilocordoba.jpeg'; 
 
 const PerfilSENA = () => {
   const estudiante = {
     nombre: "Andrés Camilo Córdoba Ramírez",
     institucion: "SENA / Sofka Technologies",
     programa: "Análisis y Desarrollo de Software (ADSO)",
-    ficha: "3494620", // 
+    ficha: "3494620", 
     ambiente: "Ambiente de Desarrollo de Software - Virtual / Presencial",
-    fotoUrl: "../assets/imgcamilocordoba.jpeg", // Reemplaza con el enlace a tu foto real
+    // 2. Asigna la variable que importaste arriba
+    fotoUrl: fotoCamilo, 
   };
 
   return (
