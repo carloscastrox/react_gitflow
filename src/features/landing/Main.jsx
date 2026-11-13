@@ -33,6 +33,7 @@ export const Main = () => {
     if (id === 1) componentName = 'Component carlos';
 
     // Agregar la lógica para otros componentes según sea necesario
+
     if (id === 21) componentName = 'Component ronald';
     //Falta el componente 20
     if (id === 19) componentName = 'Component María';
@@ -67,6 +68,7 @@ export const Main = () => {
     if (id === 1) return <Componentcarlos />;
 
     // Agregar la lógica para otros componentes según sea necesario
+
     if (id === 21) return <Ronaldlunacom />;
     if (id === 19) return <ComponentMaria />;
     if (id === 17) return <Componentkevin />;
@@ -119,7 +121,9 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
+
                   <span className={`badge mb-2 ${card.id <= 21 ? 'bg-success' : 'bg-secondary'}`}>
+
                     ID: {card.id}
                   </span>
                   <p className="h5 card-title h6 fw-bold">{card.title}</p>
