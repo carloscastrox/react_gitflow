@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 // Aquí puedes importar otros componentes según sea necesario
+import { ComponentLuna } from '../lunaaguasmejia/ComponentLuna';
 
 
 
@@ -16,7 +17,7 @@ export const Main = () => {
     
     if (id === 1) componentName = 'Component carlos';
     // Agregar la lógica para otros componentes según sea necesario
-
+    if (id === 18) componentName = 'Component Luna'
     return {
       id,
       name: componentName,
@@ -29,6 +30,7 @@ export const Main = () => {
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 18) return <ComponentLuna />
     
     const currentName = cardsData.find(c => c.id === id)?.name;
     
@@ -64,14 +66,14 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 2 ? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${card.id <= 18 ? 'bg-success' : 'bg-secondary'}`}>
                     ID: {card.id}
                   </span>
                   <h5 className="card-title h6 fw-bold">{card.title}</h5>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
                 <button 
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 2 ? 'btn-success' : 'btn-outline-primary'}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 18 ? 'btn-success' : 'btn-outline-primary'}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);

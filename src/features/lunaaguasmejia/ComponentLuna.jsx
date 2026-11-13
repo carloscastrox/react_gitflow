@@ -1,11 +1,11 @@
 import React from 'react'
-import FotoLuna from 'src/assets/imglunaa.jpg'
+import imglunaa from '../../assets/imglunaa.jpeg'
 
 export const ComponentLuna = () => {
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
       <img
-        src={FotoLuna}
+        src={imglunaa}
         alt="Foto de Luna"
         style={{ width: '150px', height: '150px', borderRadius: '50%', objectFit: 'cover' }}
       />
