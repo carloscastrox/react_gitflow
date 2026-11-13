@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 
 // Aquí puedes importar otros componentes según sea necesario
+import { Componentpablo } from "../juanpablo/Componentpablo";
 import { Componentmaya } from '../juanmaya/Componentmaya'
 import { Componentismael } from '../ismaeldiaz/componentismael'
 import { Componentjohn } from '../johndiaz/Componentjohn'
@@ -29,8 +30,9 @@ export const Main = () => {
     if (id === 1) componentName = 'Component carlos';
 
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 16) componentName = "Component pablo";
     if (id === 15) componentName = 'Component maya';
-    if (id === 14) componentName = 'Componentismael';
+    if (id === 14) componentName = 'Component ismael';
     //Falta el componente 13
     if (id === 12) componentName = 'Component john';
     if (id === 11) componentName = 'Component joan';
@@ -57,6 +59,7 @@ export const Main = () => {
     if (id === 1) return <Componentcarlos />;
 
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 16) return <Componentpablo />;
     if (id === 15) return <Componentmaya />;
     if (id === 14) return <Componentismael />;
     if (id === 12) return <Componentjohn />;
@@ -87,12 +90,12 @@ export const Main = () => {
     <main className="container my-5 flex-grow-1" id="componentes">
       <div className="row mb-4">
         <div className="col-12 text-center">
-          <p className="h1 fw-bold">Catálogo de 25 Componentes</p>
+          <p className="h1 fw-bold">Catálogo de 26 Componentes</p>
           <p className="text-muted">Selecciona cualquier tarjeta para desplegar su respectivo componente en una ventana modal.</p>
         </div>
       </div>
 
-      {/* Grid de 25 Tarjetas */}
+      {/* Grid de 26 Tarjetas */}
       <div className="row g-4">
         {cardsData.map((card) => (
           <div key={card.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -106,7 +109,7 @@ export const Main = () => {
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
 
-                  <span className={`badge mb-2 ${card.id <= 15 ? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${card.id <= 16 ? 'bg-success' : 'bg-secondary'}`}>
 
                     ID: {card.id}
                   </span>
@@ -115,7 +118,7 @@ export const Main = () => {
                 </div>
                 <button 
 
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 15 ? 'btn-success' : 'btn-outline-primary'}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 16 ? 'btn-success' : 'btn-outline-primary'}`}
 
                   onClick={(e) => {
                     e.stopPropagation();
