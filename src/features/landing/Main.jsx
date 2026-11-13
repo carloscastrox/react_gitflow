@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 
 // Aquí puedes importar otros componentes según sea necesario
-
+import { Componentyeisonescobar } from '../yeisonescobar/Componentyeisonescobar'
 import { ComponentThomas } from "../thomascano/Componentethomas";
 import { Componentesantiago } from '../santiagozapata/santiagozapata'
 import { Ronaldlunacom } from '../ronaldluna/Ronaldlunacom'
@@ -29,13 +29,14 @@ export const Main = () => {
   const [activeComponentId, setActiveComponentId] = useState(null);
 
   // Generación de los 25 componentes con sus respectivos nombres
-  const cardsData = Array.from({ length: 25 }, (_, i) => {
+  const cardsData = Array.from({ length: 26 }, (_, i) => {
     const id = i + 1;
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
 
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 25) componentName = 'Component yeison escobar';
     if (id === 24) componentName = 'Component Thomas';
     //Falta el componente 23
     if (id === 22) componentName = 'Component santiago';
@@ -73,7 +74,7 @@ export const Main = () => {
     if (id === 1) return <Componentcarlos />;
 
     // Agregar la lógica para otros componentes según sea necesario
-
+    if (id === 25) return <Componentyeisonescobar />;
     if (id === 24) return <ComponentThomas/>;
     if (id === 22) return <Componentesantiago />;
     if (id === 21) return <Ronaldlunacom />;
@@ -127,7 +128,8 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 24 ? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${card.id <= 25 ? 'bg-success' : 'bg-secondary'}`}>
+
                     ID: {card.id}
                   </span>
                   <h5 className="card-title h6 fw-bold">{card.title}</h5>
@@ -136,8 +138,8 @@ export const Main = () => {
                 </div>
 
                 <button 
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 24 ? 'btn-success' : 'btn-outline-primary'}`}
 
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 25 ? 'btn-success' : 'btn-outline-primary'}`}
 
                   onClick={(e) => {
                     e.stopPropagation();
