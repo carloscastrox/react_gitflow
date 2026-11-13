@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
-import {Componentcarlosnarvaez} from '../carlosnarvaez/Componentcarlosnarvaez';
-
-
-
 // Aquí puedes importar otros componentes según sea necesario
 
-
+import {Componentcarlosnarvaez} from '../carlosnarvaez/Componentcarlosnarvaez';
+import { ComponentBraian } from '../Braianquintero/Componentbraian'
+import Componentcamilocordoba from "../camilocordoba/Componentcamilocordoba"
+import { ComponentAngie } from '../angierodriguez/Componentangie'
+import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
 
 
 // Aquí puedes importar otros componentes según sea necesario
@@ -19,22 +19,35 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
-    if (id === 7) componentName = 'Component carlos Narvaez';
     // Agregar la lógica para otros componentes según sea necesario
 
+    if (id === 7) componentName = 'Component carlos Narvaez';
+    if (id === 6) componentName = 'Component braian';
+    if (id === 5) componentName = 'Component Angie';
+    if (id === 4) componentName = 'Component Camilo';
+    if (id === 2) componentName = 'Component Aleja';
+   
     return {
       id,
       name: componentName,
       title: `Módulo #${id}`,
       description: `Vista correspondiente al componente ${componentName}. Haz clic para abrir en el modal.`,
-    };
+    }; 
   });
 
   // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
-    if (id === 7) return <Componentcarlosnarvaez />;
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 7) return <Componentcarlosnarvaez />;
+    if (id === 6) return <ComponentBraian />;
+    if (id === 5) return <ComponentAngie />;
+    if (id === 4) return <Componentcamilocordoba />;
+    if (id === 2) return <ComponentAleja />;
+    
+ 
+  
+  
     
     const currentName = cardsData.find(c => c.id === id)?.name;
     
@@ -52,7 +65,7 @@ export const Main = () => {
     <main className="container my-5 flex-grow-1" id="componentes">
       <div className="row mb-4">
         <div className="col-12 text-center">
-          <h1 className="fw-bold">Catálogo de 25 Componentes</h1>
+          <p className="h1 fw-bold">Catálogo de 25 Componentes</p>
           <p className="text-muted">Selecciona cualquier tarjeta para desplegar su respectivo componente en una ventana modal.</p>
         </div>
       </div>
@@ -73,10 +86,10 @@ export const Main = () => {
                   <span className={`badge mb-2 ${card.id <= 7 ? 'bg-success' : 'bg-secondary'}`}>
                     ID: {card.id}
                   </span>
-                  <h5 className="card-title h6 fw-bold">{card.title}</h5>
+                  <p className="h5 card-title h6 fw-bold">{card.title}</p>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
-                <button 
+                <button
                   className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 7 ? 'btn-success' : 'btn-outline-primary'}`}
                   onClick={(e) => {
                     e.stopPropagation();
