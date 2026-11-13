@@ -11,5 +11,4 @@ export const Componentcarlos = () => {
         personalizadas para este módulo.
       </p>
     </div>
-  );
-};
+  )
