@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
-import { ComponentNata } from '../features/nataliasuarez/ComponentNata';
+import { ComponentNata } from "../nataliasuarez/ComponentNata";
 // Aquí puedes importar otros componentes según sea necesario
 
 
