@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Componentcarlos } from "../carloscastro/Componentcarlos";
 // Aquí puedes importar otros componentes según sea necesario
-import Componentpablo from "../juanpablo/Componentpablo";
+import { Componentpablo } from "../juanpablo/Componentpablo";
 // Aquí puedes importar otros componentes según sea necesario
 export const Main = () => {
   const [activeComponentId, setActiveComponentId] = useState(null);

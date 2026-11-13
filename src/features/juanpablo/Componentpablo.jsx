@@ -1,6 +1,6 @@
 import React from "react";
 import imgjuanpablo from "../../assets/imgjuanpablo.png";
-export default function Componentpablo() {
+export function Componentpablo() {
   return (
     <div style={estilos.contenedor}>
       <div style={estilos.tarjeta}>
