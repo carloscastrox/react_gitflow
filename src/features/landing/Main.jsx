@@ -67,14 +67,14 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 2 ? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${card.id <= 20 ? 'bg-success' : 'bg-secondary'}`}>
                     ID: {card.id}
                   </span>
                   <p className="h5 card-title h6 fw-bold">{card.title}</p>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
                 <button 
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 2 ? 'btn-success' : 'btn-outline-primary'}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 20 ? 'btn-success' : 'btn-outline-primary'}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
