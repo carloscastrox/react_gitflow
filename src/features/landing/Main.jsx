@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
+import { ComponentBraian } from '../Braianquintero/Componentbraian'
 // Aquí puedes importar otros componentes según sea necesario
 
 
@@ -15,6 +16,7 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
+    if (id === 6) componentName = 'Component braian';
     // Agregar la lógica para otros componentes según sea necesario
 
     return {
@@ -22,12 +24,13 @@ export const Main = () => {
       name: componentName,
       title: `Módulo #${id}`,
       description: `Vista correspondiente al componente ${componentName}. Haz clic para abrir en el modal.`,
-    };
+    }; 
   });
 
   // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
+    if (id === 6) return <ComponentBraian />;
     // Agregar la lógica para otros componentes según sea necesario
     
     const currentName = cardsData.find(c => c.id === id)?.name;
@@ -64,14 +67,14 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 2 ? 'bg-success' : 'bg-secondary'}`}>
+                  <span className={`badge mb-2 ${card.id <= 6 ? 'bg-success' : 'bg-secondary'}`}>
                     ID: {card.id}
                   </span>
                   <h5 className="card-title h6 fw-bold">{card.title}</h5>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
                 <button 
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 2 ? 'btn-success' : 'btn-outline-primary'}`}
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 6 ? 'btn-success' : 'btn-outline-primary'}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
