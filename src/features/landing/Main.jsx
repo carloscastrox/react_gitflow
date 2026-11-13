@@ -1,12 +1,23 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
+
+// Aquí puedes importar otros componentes según sea necesario
 import { Componentmaya } from '../juanmaya/Componentmaya'
-// Aquí puedes importar otros componentes según sea necesario
+import { Componentismael } from '../ismaeldiaz/componentismael'
+import { Componentjohn } from '../johndiaz/Componentjohn'
+import Componentjoan from '../joanrios/Componentjoan.jsx'
+import { ComponentJacobo } from '../jacobopaniagua/componentjacobo'
+import { Componentisabella } from '../isabellazambrano/Componentisabella'
+import { Componentfarid } from '../faridcoterah/Componentfarid'
+import {Componentcarlosnarvaez} from '../carlosnarvaez/Componentcarlosnarvaez';
+import { ComponentBraian } from '../Braianquintero/Componentbraian'
+import Componentcamilocordoba from "../camilocordoba/Componentcamilocordoba"
+import { ComponentAngie } from '../angierodriguez/Componentangie'
+import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
 
 
 
-
-// Aquí puedes importar otros componentes según sea necesario
+//Aquí puedes importar otros componentes según sea necesario
 export const Main = () => {
   const [activeComponentId, setActiveComponentId] = useState(null);
 
@@ -16,23 +27,50 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
-    if (id === 15) componentName = 'Component maya';
-    // Agregar la lógica para otros componentes según sea necesario
 
+    // Agregar la lógica para otros componentes según sea necesario
+    if (id === 15) componentName = 'Component maya';
+    if (id === 14) componentName = 'Componentismael';
+    //Falta el componente 13
+    if (id === 12) componentName = 'Component john';
+    if (id === 11) componentName = 'Component joan';
+    if (id === 10) componentName = 'Component jacobo';
+    if (id === 9) componentName = 'Component isabella';
+    if (id === 8) componentName = 'Component farid';
+    if (id === 7) componentName = 'Component carlos Narvaez';
+    if (id === 6) componentName = 'Component braian';
+    if (id === 5) componentName = 'Component Angie';
+    if (id === 4) componentName = 'Component Camilo';
+    //Falta el componente 3
+    if (id === 2) componentName = 'Component Aleja';
+   
     return {
       id,
       name: componentName,
       title: `Módulo #${id}`,
       description: `Vista correspondiente al componente ${componentName}. Haz clic para abrir en el modal.`,
-    };
+    }; 
   });
 
   // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
-    if (id === 15) return <Componentmaya />;
+
     // Agregar la lógica para otros componentes según sea necesario
+    if (id === 15) return <Componentmaya />;
+    if (id === 14) return <Componentismael />;
+    if (id === 12) return <Componentjohn />;
+    if (id === 11) return <Componentjoan />;
+    if (id === 10) return <ComponentJacobo />;
+    if (id === 9) return <Componentisabella />;
+    if (id === 8) return <Componentfarid />;
+    if (id === 7) return <Componentcarlosnarvaez />;
+    if (id === 6) return <ComponentBraian />;
+    if (id === 5) return <ComponentAngie />;
+    if (id === 4) return <Componentcamilocordoba />;
+    if (id === 2) return <ComponentAleja />;
     
+
     const currentName = cardsData.find(c => c.id === id)?.name;
     
     return (
@@ -49,7 +87,7 @@ export const Main = () => {
     <main className="container my-5 flex-grow-1" id="componentes">
       <div className="row mb-4">
         <div className="col-12 text-center">
-          <h1 className="fw-bold">Catálogo de 25 Componentes</h1>
+          <p className="h1 fw-bold">Catálogo de 25 Componentes</p>
           <p className="text-muted">Selecciona cualquier tarjeta para desplegar su respectivo componente en una ventana modal.</p>
         </div>
       </div>
@@ -67,14 +105,18 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
+
                   <span className={`badge mb-2 ${card.id <= 15 ? 'bg-success' : 'bg-secondary'}`}>
+
                     ID: {card.id}
                   </span>
-                  <h5 className="card-title h6 fw-bold">{card.title}</h5>
+                  <p className="h5 card-title h6 fw-bold">{card.title}</p>
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
                 <button 
+
                   className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 15 ? 'btn-success' : 'btn-outline-primary'}`}
+
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
