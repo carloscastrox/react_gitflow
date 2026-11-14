@@ -1,5 +1,6 @@
 import React from 'react'
-import Imgjohn from '../assets/Imgjohn.jpg'
+import Imgjohn from '../../assets/Imgjohn.jpg'
+
 
 export const Componentjohn = () => {
   return (

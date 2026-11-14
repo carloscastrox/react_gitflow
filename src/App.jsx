@@ -5,8 +5,6 @@ import { Header } from './features/landing/Header'
 import { Footer } from './features/landing/Footer'
 import { Main } from './features/landing/Main'
 
-import './App.css'
-
 function App() {
   const [theme, setTheme] = useState('light');
 
