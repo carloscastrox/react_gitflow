@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600&display=swap");
+
+.perfil {
+  --negro: #0b0f14;
+  --negro-suave: #161c24;
+  --azul: #8ec1f2;
+  --azul-intenso: #4f93d6;
+  --azul-palido: #e8f2fc;
+  --blanco: #ffffff;
+  --gris-texto: #4a5560;
+  --linea: #dbe6f1;
+  --mesa: #dde7f1;
+
+  --fuente-titulo: "Fraunces", Georgia, "Times New Roman", serif;
+  --fuente-texto: "Manrope", "Segoe UI", system-ui, sans-serif;
+
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: var(--mesa);
+  color: var(--negro);
+  font-family: var(--fuente-texto);
+}
+
+.perfil *,
+.perfil *::before,
+.perfil *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- La hoja ---------- */
+
+.perfil__tarjeta {
+  width: min(100%, 56rem);
+  min-height: 34rem;
+  display: grid;
+  grid-template-columns: 17rem 1fr;
+  background: var(--blanco);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgb(11 15 20 / 0.1), 0 30px 60px -30px rgb(11 15 20 / 0.45);
+}
+
+/* ---------- Columna lateral (negra) ---------- */
+
+.retrato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 3rem 1.75rem;
+  background: var(--negro);
+  color: var(--blanco);
+  border-right: 6px solid var(--azul);
+}
+
+.retrato__marco {
+  position: relative;
+  width: 10.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--azul);
+  overflow: hidden;
+  outline: 3px solid var(--azul);
+  outline-offset: 5px;
+}
+
+.retrato__foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.retrato__iniciales {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: var(--negro);
+}
+
+.retrato__enfoque {
+  margin: 0;
+  padding-top: 1.5rem;
+  width: 100%;
+  border-top: 1px solid rgb(142 193 242 / 0.4);
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--azul);
+}
+
+/* ---------- Contenido (blanco) ---------- */
+
+.perfil__contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+.perfil__nombre {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--negro);
+}
+
+.perfil__rol {
+  margin: 1rem 0 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 4px solid var(--azul);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--gris-texto);
+}
+
+/* ---------- Formación ---------- */
+
+.formacion {
+  margin: 2rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2rem;
+}
+
+.formacion::before {
+  content: "Formación académica";
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+  padding: 0.4rem 0.9rem;
+  width: fit-content;
+  background: var(--negro);
+  color: var(--blanco);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.formacion__item {
+  margin: 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.formacion__item--principal {
+  grid-column: 1 / -1;
+}
+
+.formacion__item dt {
+  margin: 0 0 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--azul-intenso);
+}
+
+.formacion__item dd {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.formacion__item--principal dd {
+  font-family: var(--fuente-titulo);
+  font-size: 1.45rem;
+  font-weight: 600;
+  max-width: 28ch;
+}
+
+.formacion__sigla {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.15rem 0.75rem;
+  background: var(--azul-palido);
+  border-left: 4px solid var(--azul);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Pantallas pequeñas ---------- */
+
+@media (max-width: 720px) {
+  .perfil__tarjeta {
+    grid-template-columns: 1fr;
+  }
+
+  .retrato {
+    padding: 2.25rem 1.5rem;
+    border-right: 0;
+    border-bottom: 6px solid var(--azul);
+  }
+
+  .retrato__enfoque {
+    max-width: 18rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .formacion {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Al imprimir (Ctrl + P) ---------- */
+
+@media print {
+  .perfil {
+    padding: 0;
+    background: var(--blanco);
+  }
+
+  .perfil__tarjeta {
+    box-shadow: none;
+    width: 100%;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
