@@ -7,6 +7,7 @@ import { ComponentThomas } from "../thomascano/Componentethomas";
 import { Componentesantiago } from '../santiagozapata/santiagozapata'
 import { Ronaldlunacom } from '../ronaldluna/Ronaldlunacom'
 import { Componentmarria as ComponentMaria } from '../mariarivera/ComponenMaria'
+import { ComponentLuna } from '../lunaaguasmejia/ComponentLuna';
 import { Componentkevin } from '../kevinosorio/Componentkevin'
 import { Componentpablo } from "../juanpablo/Componentpablo";
 import { Componentmaya } from '../juanmaya/Componentmaya'
@@ -23,8 +24,6 @@ import { ComponentAngie } from '../angierodriguez/Componentangie'
 import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
 
 
-
-//Aquí puedes importar otros componentes según sea necesario
 export const Main = () => {
   const [activeComponentId, setActiveComponentId] = useState(null);
 
@@ -43,7 +42,7 @@ export const Main = () => {
     if (id === 21) componentName = 'Component ronald';
     //Falta el componente 20
     if (id === 19) componentName = 'Component María';
-    //Falta el componente 18
+    if (id === 18) componentName = 'Component Luna'
     if (id === 17) componentName = 'Component kevin';
     if (id === 16) componentName = "Component pablo";
     if (id === 15) componentName = 'Component maya';
@@ -61,14 +60,14 @@ export const Main = () => {
     //Falta el componente 3
     if (id === 2) componentName = 'Component Aleja';
    
-    return {
+ return {
       id,
       name: componentName,
       title: `Módulo #${id}`,
       description: `Vista correspondiente al componente ${componentName}. Haz clic para abrir en el modal.`,
-    }; 
-  });
-
+    }
+  })
+  
   // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
@@ -79,6 +78,7 @@ export const Main = () => {
     if (id === 22) return <Componentesantiago />;
     if (id === 21) return <Ronaldlunacom />;
     if (id === 19) return <ComponentMaria />;
+    if (id === 18) return <ComponentLuna />
     if (id === 17) return <Componentkevin />;
     if (id === 16) return <Componentpablo />;
     if (id === 15) return <Componentmaya />;
@@ -115,7 +115,7 @@ export const Main = () => {
         </div>
       </div>
 
-      {/* Grid de 26 Tarjetas */}
+     {/* Grid de 26 Tarjetas */}
       <div className="row g-4">
         {cardsData.map((card) => (
           <div key={card.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -128,19 +128,14 @@ export const Main = () => {
             >
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <span className={`badge mb-2 ${card.id <= 25 ? 'bg-success' : 'bg-secondary'}`}>
-
+                  <span className={`badge mb-2 ${card.id <= 26 ? 'bg-success' : 'bg-secondary'}`}>
                     ID: {card.id}
                   </span>
                   <h5 className="card-title h6 fw-bold">{card.title}</h5>
-
                   <p className="card-text small text-muted">{card.description}</p>
                 </div>
-
                 <button 
-
-                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 25 ? 'btn-success' : 'btn-outline-primary'}`}
-
+                  className={`btn btn-sm mt-3 w-100 text-truncate ${card.id <= 26 ? 'btn-success' : 'btn-outline-primary'}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveComponentId(card.id);
