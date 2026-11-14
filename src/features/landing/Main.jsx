@@ -19,6 +19,7 @@ import { Componentfarid } from '../faridcoterah/Componentfarid'
 import {Componentcarlosnarvaez} from '../carlosnarvaez/Componentcarlosnarvaez';
 import { ComponentBraian } from '../Braianquintero/Componentbraian'
 import Componentcamilocordoba from "../camilocordoba/Componentcamilocordoba"
+import { Componentalejo } from '../alejandromesa/Componentalejo'
 import { ComponentAngie } from '../angierodriguez/Componentangie'
 import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
 
@@ -55,7 +56,7 @@ export const Main = () => {
     if (id === 6) componentName = 'Component braian';
     if (id === 5) componentName = 'Component Angie';
     if (id === 4) componentName = 'Component Camilo';
-    //Falta el componente 3
+    if (id === 3) componentName = 'Component alejo'
     if (id === 2) componentName = 'Component Aleja';
    
  return {
@@ -89,6 +90,7 @@ export const Main = () => {
     if (id === 6) return <ComponentBraian />;
     if (id === 5) return <ComponentAngie />;
     if (id === 4) return <Componentcamilocordoba />;
+    if (id === 3) return <Componentalejo />;
     if (id === 2) return <ComponentAleja />;    
 
     const currentName = cardsData.find(c => c.id === id)?.name;
