@@ -4,7 +4,6 @@ import { Componentcarlos } from '../carloscastro/Componentcarlos'
 // Aquí puedes importar otros componentes según sea necesario
 import { Componentyeisonescobar } from '../yeisonescobar/Componentyeisonescobar'
 import { ComponentThomas } from "../thomascano/Componentethomas";
-import { Componentesantiago } from '../santiagozapata/santiagozapata'
 import { Ronaldlunacom } from '../ronaldluna/Ronaldlunacom'
 import { Componentmarria as ComponentMaria } from '../mariarivera/ComponenMaria'
 import { ComponentLuna } from '../lunaaguasmejia/ComponentLuna';
@@ -37,8 +36,7 @@ export const Main = () => {
     // Agregar la lógica para otros componentes según sea necesario
     if (id === 25) componentName = 'Component yeison escobar';
     if (id === 24) componentName = 'Component Thomas';
-    //Falta el componente 23
-    if (id === 22) componentName = 'Component santiago';
+    //Falta el componente 22 y 23
     if (id === 21) componentName = 'Component ronald';
     //Falta el componente 20
     if (id === 19) componentName = 'Component María';
@@ -75,7 +73,6 @@ export const Main = () => {
     // Agregar la lógica para otros componentes según sea necesario
     if (id === 25) return <Componentyeisonescobar />;
     if (id === 24) return <ComponentThomas/>;
-    if (id === 22) return <Componentesantiago />;
     if (id === 21) return <Ronaldlunacom />;
     if (id === 19) return <ComponentMaria />;
     if (id === 18) return <ComponentLuna />
