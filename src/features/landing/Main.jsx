@@ -1,27 +1,18 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
-import { Componentsantiagozapata } from '../santiagozapata/Componentsantiago';
+// ✅ CORREGIDO: Importa tu componente con el nombre correcto
+import Componentesantiago from '../santiagozapata/santiagozapata';
 
-
-
-// Aquí puedes importar otros componentes según sea necesario
-
-
-
-
-// Aquí puedes importar otros componentes según sea necesario
 export const Main = () => {
   const [activeComponentId, setActiveComponentId] = useState(null);
 
-  // Generación de los 25 componentes con sus respectivos nombres
   const cardsData = Array.from({ length: 25 }, (_, i) => {
     const id = i + 1;
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
-    if (id === 22) componentName = 'Component santiago';
-    // Agregar la lógica para otros componentes según sea necesario
-
+    if (id === 22) componentName = 'Component santiago'; // ✅ Tu ID es 22
+    
     return {
       id,
       name: componentName,
@@ -30,11 +21,9 @@ export const Main = () => {
     };
   });
 
-  // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
-    if (id === 7) return <Componentesantiago />;
-    // Agregar la lógica para otros componentes según sea necesario
+    if (id === 22) return <Componentesantiago />; 
     
     const currentName = cardsData.find(c => c.id === id)?.name;
     
@@ -57,7 +46,6 @@ export const Main = () => {
         </div>
       </div>
 
-      {/* Grid de 25 Tarjetas */}
       <div className="row g-4">
         {cardsData.map((card) => (
           <div key={card.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -91,7 +79,6 @@ export const Main = () => {
         ))}
       </div>
 
-      {/* Modal de Bootstrap */}
       {activeComponentId !== null && (
         <div 
           className="modal fade show d-block" 
