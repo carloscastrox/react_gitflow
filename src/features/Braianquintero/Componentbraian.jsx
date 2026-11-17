@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import imgBraian from '../../assets/imgbraian.jpg'
+import imgBraian from '../../assets/imgbraian.png'
 
 const styles = {
   card: {
