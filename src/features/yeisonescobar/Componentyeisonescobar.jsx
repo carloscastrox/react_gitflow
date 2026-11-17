@@ -1,4 +1,5 @@
 import React from "react";
+import imgYeison from "../../assets/imgyeisonescobar.jpg";
 
 export const Componentyeisonescobar = () => {
   return (
@@ -9,17 +10,12 @@ export const Componentyeisonescobar = () => {
       {/* Contenedor de la foto */}
       <div className="mb-3">
         <img
-          src="../../assets/imgyeisonescobar.jpg"
+          src={imgYeison}
           alt="Yeison Escobar"
           className="rounded-circle img-thumbnail"
           style={{ width: "120px", height: "120px", objectFit: "cover" }}
         />
       </div>
-
-      {/* Título requerido */}
-      <h3 className="fw-bold text-success mb-2">
-        ¡Componente de Yeison Escobar Activo!
-      </h3>
 
       {/* Nombre y programa */}
       <h4 className="h5 fw-bold text-dark mb-1">Yeison Escobar</h4>
