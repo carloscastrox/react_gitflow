@@ -2,25 +2,7 @@ import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 
 // Aquí puedes importar otros componentes según sea necesario
-import { Componentyeisonescobar } from '../yeisonescobar/Componentyeisonescobar'
-import { ComponentThomas } from "../thomascano/Componentethomas";
-import { Ronaldlunacom } from '../ronaldluna/Ronaldlunacom'
-import { Componentmarria as ComponentMaria } from '../mariarivera/ComponenMaria'
-import { ComponentLuna } from '../lunaaguasmejia/ComponentLuna';
-import { Componentkevin } from '../kevinosorio/Componentkevin'
-import { Componentpablo } from "../juanpablo/Componentpablo";
-import { Componentmaya } from '../juanmaya/Componentmaya'
-import { Componentismael } from '../ismaeldiaz/componentismael'
-import { Componentjohn } from '../johndiaz/Componentjohn'
-import Componentjoan from '../joanrios/Componentjoan.jsx'
-import { ComponentJacobo } from '../jacobopaniagua/componentjacobo'
-import { Componentisabella } from '../isabellazambrano/Componentisabella'
-import { Componentfarid } from '../faridcoterah/Componentfarid'
-import {Componentcarlosnarvaez} from '../carlosnarvaez/Componentcarlosnarvaez';
-import { ComponentBraian } from '../Braianquintero/Componentbraian'
-import Componentcamilocordoba from "../camilocordoba/Componentcamilocordoba"
-import { ComponentAngie } from '../angierodriguez/Componentangie'
-import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
+import { Componetsebastian} from '../sebastianmonsalve/Componetsebastian'
 
 
 export const Main = () => {
@@ -36,6 +18,7 @@ export const Main = () => {
     // Agregar la lógica para otros componentes según sea necesario
     if (id === 25) componentName = 'Component yeison escobar';
     if (id === 24) componentName = 'Component Thomas';
+    if (id === 23) componentName = 'Component Sebastian';
     //Falta el componente 22 y 23
     if (id === 21) componentName = 'Component ronald';
     //Falta el componente 20
@@ -73,6 +56,7 @@ export const Main = () => {
     // Agregar la lógica para otros componentes según sea necesario
     if (id === 25) return <Componentyeisonescobar />;
     if (id === 24) return <ComponentThomas/>;
+    if (id === 23) return <Componetsebastian/>;
     if (id === 21) return <Ronaldlunacom />;
     if (id === 19) return <ComponentMaria />;
     if (id === 18) return <ComponentLuna />

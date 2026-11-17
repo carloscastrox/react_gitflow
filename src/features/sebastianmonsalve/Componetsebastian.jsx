@@ -7,7 +7,7 @@ export const Componetsebastian = () => {
         style={{ width: '300px' }}>
 
         <img
-          src='../../assets/sebastian.jpg'
+          src='./src/assets/sebastian.jpg'
           className="card-img-top"
           alt="Foto de Sebastián"
           style={{ height: '280px', objectFit: 'cover' }}
