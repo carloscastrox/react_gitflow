@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
 import { Componentalejo } from '../alejandromesa/Componentalejo'
 
-
 export const Main = () => {
   const [activeComponentId, setActiveComponentId] = useState(null);
 
@@ -15,6 +14,7 @@ export const Main = () => {
     if (id === 3) componentName = 'Component alejo';
 
     return {
+
       id,
       name: componentName,
       title: `Módulo #${id}`,
@@ -25,7 +25,11 @@ export const Main = () => {
   // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
+ 
     if (id === 3) return <Componentalejo />;
+
+
+    
 
     const currentName = cardsData.find(c => c.id === id)?.name;
 
