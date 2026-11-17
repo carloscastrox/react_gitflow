@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import imgJacobo from '../../assets/imgjacobo.jpeg'
 
 const styles = {
   card: {
@@ -58,7 +59,7 @@ export const ComponentJacobo = () => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <img style={styles.foto} src="src/assets/imgjaco.jpeg" alt="Foto de Jacobo" />
+      <img style={styles.foto} src={imgJacobo} alt="Foto de Jacobo" />
       <h1 style={styles.nombre}>Jacobo Paniagua</h1>
       <p style={styles.programa}>ADSO</p>
       <p style={styles.ambiente}>Ambiente 703</p>
