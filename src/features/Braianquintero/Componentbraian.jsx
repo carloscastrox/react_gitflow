@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import imgBraian from '../../assets/imgbraian.jpg'
 
 const styles = {
   card: {
@@ -49,7 +50,7 @@ export const ComponentBraian = () => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <img style={styles.foto} src="/src/assets/imgbraian.png" alt="Foto de Braian" />
+      <img style={styles.foto} src={imgBraian} alt="Foto de Braian" />
       <h1 style={styles.nombre}>Braian Quintero</h1>
       <p style={styles.programa}>ADSO</p>
       <p style={styles.ambiente}>Ambiente 703</p>
