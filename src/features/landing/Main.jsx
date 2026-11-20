@@ -1,26 +1,9 @@
 import React, { useState } from 'react'
 import { Componentcarlos } from '../carloscastro/Componentcarlos'
+import { ComponentNata } from '../nataliasuarez/ComponentNata'
 
 // Aquí puedes importar otros componentes según sea necesario
-import { Componentyeisonescobar } from '../yeisonescobar/Componentyeisonescobar'
-import { ComponentThomas } from "../thomascano/Componentethomas";
-import { Ronaldlunacom } from '../ronaldluna/Ronaldlunacom'
-import { Componentmarria as ComponentMaria } from '../mariarivera/ComponenMaria'
-import { ComponentLuna } from '../lunaaguasmejia/ComponentLuna';
-import { Componentkevin } from '../kevinosorio/Componentkevin'
-import { Componentpablo } from "../juanpablo/Componentpablo";
-import { Componentmaya } from '../juanmaya/Componentmaya'
-import { Componentismael } from '../ismaeldiaz/componentismael'
-import { Componentjohn } from '../johndiaz/Componentjohn'
-import Componentjoan from '../joanrios/Componentjoan.jsx'
-import { ComponentJacobo } from '../jacobopaniagua/componentjacobo'
-import { Componentisabella } from '../isabellazambrano/Componentisabella'
-import { Componentfarid } from '../faridcoterah/Componentfarid'
-import {Componentcarlosnarvaez} from '../carlosnarvaez/Componentcarlosnarvaez';
-import { ComponentBraian } from '../Braianquintero/Componentbraian'
-import Componentcamilocordoba from "../camilocordoba/Componentcamilocordoba"
-import { ComponentAngie } from '../angierodriguez/Componentangie'
-import { ComponentAleja } from '../alejandralondoño/ComponentAleja'
+
 
 
 export const Main = () => {
@@ -32,31 +15,12 @@ export const Main = () => {
     let componentName = `Componente${id}`;
     
     if (id === 1) componentName = 'Component carlos';
+    if (id === 20) componentName = 'Component Natalia';
+
+
 
     // Agregar la lógica para otros componentes según sea necesario
-    if (id === 25) componentName = 'Component yeison escobar';
-    if (id === 24) componentName = 'Component Thomas';
-    //Falta el componente 22 y 23
-    if (id === 21) componentName = 'Component ronald';
-    //Falta el componente 20
-    if (id === 19) componentName = 'Component María';
-    if (id === 18) componentName = 'Component Luna'
-    if (id === 17) componentName = 'Component kevin';
-    if (id === 16) componentName = "Component pablo";
-    if (id === 15) componentName = 'Component maya';
-    if (id === 14) componentName = 'Component ismael';
-    //Falta el componente 13
-    if (id === 12) componentName = 'Component john';
-    if (id === 11) componentName = 'Component joan';
-    if (id === 10) componentName = 'Component jacobo';
-    if (id === 9) componentName = 'Component isabella';
-    if (id === 8) componentName = 'Component farid';
-    if (id === 7) componentName = 'Component carlos Narvaez';
-    if (id === 6) componentName = 'Component braian';
-    if (id === 5) componentName = 'Component Angie';
-    if (id === 4) componentName = 'Component Camilo';
-    //Falta el componente 3
-    if (id === 2) componentName = 'Component Aleja';
+  
    
  return {
       id,
@@ -69,27 +33,10 @@ export const Main = () => {
   // Renderizado dinámico del contenido dentro del modal según el ID seleccionado
   const renderModalContent = (id) => {
     if (id === 1) return <Componentcarlos />;
+    if (id === 20) return <ComponentNata />;
 
     // Agregar la lógica para otros componentes según sea necesario
-    if (id === 25) return <Componentyeisonescobar />;
-    if (id === 24) return <ComponentThomas/>;
-    if (id === 21) return <Ronaldlunacom />;
-    if (id === 19) return <ComponentMaria />;
-    if (id === 18) return <ComponentLuna />
-    if (id === 17) return <Componentkevin />;
-    if (id === 16) return <Componentpablo />;
-    if (id === 15) return <Componentmaya />;
-    if (id === 14) return <Componentismael />;
-    if (id === 12) return <Componentjohn />;
-    if (id === 11) return <Componentjoan />;
-    if (id === 10) return <ComponentJacobo />;
-    if (id === 9) return <Componentisabella />;
-    if (id === 8) return <Componentfarid />;
-    if (id === 7) return <Componentcarlosnarvaez />;
-    if (id === 6) return <ComponentBraian />;
-    if (id === 5) return <ComponentAngie />;
-    if (id === 4) return <Componentcamilocordoba />;
-    if (id === 2) return <ComponentAleja />;    
+    
 
     const currentName = cardsData.find(c => c.id === id)?.name;
     

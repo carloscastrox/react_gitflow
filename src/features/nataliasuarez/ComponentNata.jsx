@@ -1,4 +1,5 @@
 import React from 'react';
+import imgnata from '../../assets/fotonat.jpeg'; 
 
 export const ComponentNata = () => {
   return (
@@ -13,7 +14,7 @@ export const ComponentNata = () => {
       margin: '20px auto'
     }}>
       <img
-        src="/FotoNata.png"
+        src={imgnata}
         alt="Foto de Natalia Peña Suárez"
         style={{
           width: '130px',
