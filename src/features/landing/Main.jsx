@@ -3,7 +3,7 @@ import { Componentcarlos } from '../carloscastro/Componentcarlos'
 
 // Aquí puedes importar otros componentes según sea necesario
 import { Componetsebastian} from '../sebastianmonsalve/Componetsebastian'
-
+import { Componentyeisonescobar } from "../yeisonescobar/Componentyeisonescobar";
 
 export const Main = () => {
   const [activeComponentId, setActiveComponentId] = useState(null);
