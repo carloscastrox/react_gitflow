@@ -16,7 +16,7 @@ import Componentjoan from '../joanrios/Componentjoan.jsx'
 import { ComponentJacobo } from '../jacobopaniagua/componentjacobo'
 import { Componentisabella } from '../isabellazambrano/Componentisabella'
 import { Componentfarid } from '../faridcoterah/Componentfarid'
-import {Componentcarlosnarvaez} from '../carlosnarvaez/Componentcarlosnarvaez';
+import { Componentcarlosnarvaez } from '../carlosnarvaez/Componentcarlosnarvaez';
 import { ComponentBraian } from '../Braianquintero/Componentbraian'
 import Componentcamilocordoba from "../camilocordoba/Componentcamilocordoba"
 import { ComponentAngie } from '../angierodriguez/Componentangie'
